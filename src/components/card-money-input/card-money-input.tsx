@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cn from 'classnames';
-import { InputAdornment, TextField } from '@material-ui/core';
+import { InputAdornment, TextField } from '@mui/material';
 import { RUR_SIGN } from '../../constants';
 import { withBaseFieldAdapter } from '../with-base-field-adapter';
 import type { TAdapterComponentProps } from '../with-base-field-adapter';

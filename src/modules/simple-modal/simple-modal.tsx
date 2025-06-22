@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import cn from 'classnames';
-import { Button, Dialog } from '@material-ui/core';
+import { Button, Dialog } from '@mui/material';
 import { useCloseSimpleModal } from './simple-modal-actions';
 import { getSimpleModalData, getSimpleModalIsOpen, getSimpleModalWithError } from './simple-modal-selectors';
 import styles from './simple-modal.module.scss'

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import type { FormInstance } from 'redux-form';
-import { Button } from '@material-ui/core';
+import { Button } from '@mui/material';
 import { ApplicationPage } from '../../components/application-page';
 import { CardMoneyInput } from '../../components/card-money-input';
 import { CreditCard } from '../../modules/credit-card';

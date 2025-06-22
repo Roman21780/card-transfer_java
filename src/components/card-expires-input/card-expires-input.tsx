@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Input } from '@material-ui/core';
+import { Input } from '@mui/material';
 import { withBaseFieldAdapter } from '../with-base-field-adapter';
 import type { TAdapterComponentProps } from '../with-base-field-adapter';
 import { CARD_EXPIRES_INPUT_PLACEHOLDER } from './card-expires-input-constants';

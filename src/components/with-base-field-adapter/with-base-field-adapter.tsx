@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { WrappedFieldInputProps, WrappedFieldMetaProps } from 'redux-form';
 import cn from 'classnames';
-import { InputLabel } from '@material-ui/core';
+import { InputLabel } from '@mui/material';
 import styles from './with-base-field-adapter.module.scss';
 
 export type TAdapterComponentProps = {

@@ -40,7 +40,7 @@ export const onSubmitHandler = async (values: TCreditCardInfoPageFormValues, dis
             openSimpleModalAction(DEFAULT_OK_TITLE, DEFAULT_OK_MESSAGE)
         );
         dispatch(reset(CARD_INFO_PAGE_FORM))
-    } catch (error) {
+    } catch (error: any) {
         dispatch(
             openSimpleModalAction(DEFAULT_ERROR_TITLE, error?.response?.data?.message || DEFAULT_ERROR_MESSAGE, true)
         );

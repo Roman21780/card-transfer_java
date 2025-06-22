@@ -70,7 +70,7 @@ const validateMoney: TBaseFieldValidator = (money) => {
     if (!money || !money.trim()) {
         return `Сумма перевода обязательна`;
     }
-    const cleanMoney = money.replace(new RegExp(`[\s${RUR_SIGN}]`, 'g'), '');
+    const cleanMoney = money.replace(new RegExp(`[\\s${RUR_SIGN}]`, 'g'), '');
     const cleanMoneyCount = parseFloat(cleanMoney);
     if (!cleanMoneyCount || cleanMoneyCount === 0) {
         return `Необходимо указать сумму перевода`;
