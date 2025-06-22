@@ -2,18 +2,19 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Установите patch-package глобально
-RUN npm install -g patch-package
-
-# Копируем только файлы зависимостей сначала
+# 1. Копируем только package.json для кэширования
 COPY package*.json ./
-COPY patches/ ./patches/
 
-# Устанавливаем зависимости (включая devDependencies для patch-package)
-RUN npm install
+# 2. Устанавливаем ВСЕ зависимости (включая dev)
+RUN npm ci
 
-# Копируем остальной код и собираем
+# 3. Удаляем ненужные dev-зависимости после установки
+RUN npm prune --omit=dev
+
+# 4. Копируем остальной код
 COPY . .
+
+# 5. Собираем проект
 RUN npm run build
 
 EXPOSE 3000
