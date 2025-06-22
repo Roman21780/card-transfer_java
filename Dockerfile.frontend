@@ -1,8 +1,18 @@
-FROM node:18
+FROM node:18-alpine
 
 WORKDIR /app
+
+# Установите patch-package глобально
+RUN npm install -g patch-package
+
+# Копируем только файлы зависимостей сначала
 COPY package*.json ./
+COPY patches/ ./patches/
+
+# Устанавливаем зависимости (включая devDependencies для patch-package)
 RUN npm install
+
+# Копируем остальной код и собираем
 COPY . .
 RUN npm run build
 
